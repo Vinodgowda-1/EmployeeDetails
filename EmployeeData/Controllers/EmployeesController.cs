@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using EmployeeDataWebApi.EmployeeData;
 using EmployeeDataWebApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,9 +21,11 @@ namespace EmployeeDataWebApi.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult GetEmployees()
-        {
-            return Ok (_employeeData.GetEmployees());
+        {         
+          return Ok(_employeeData.GetEmployees());
+            
         }
 
         [HttpGet("{id}")]
@@ -44,9 +47,8 @@ namespace EmployeeDataWebApi.Controllers
         public IActionResult DeleteEmployee(Guid id)
         {
            
-            var employee = _employeeData.GetEmployee(id);
-            _employeeData.DeleteEmployee(employee);
-            return Ok(employee);
+            _employeeData.DeleteEmployee(id);
+            return Ok();
         }
         [HttpPatch]
         public IActionResult EditEmployee(Guid id,Employee employee)

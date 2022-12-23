@@ -22,8 +22,14 @@ namespace EmployeeDataWebApi.EmployeeData
             return employee;
         }
 
-        public void DeleteEmployee(Employee employee)
+        public void DeleteEmployee(Guid id)
         {
+            var employee = GetEmployee(id);
+
+            if(employee == null)
+            {
+                throw new Exception("Not found");          
+            }
             _employeeContext.Employees.Remove(employee);
             _employeeContext.SaveChanges();
         }

@@ -17,17 +17,7 @@ namespace EmployeeDataWebApi.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Employee>().Property(x => x.Id).ValueGeneratedOnAdd();
-                //HasDefaultValueSql("NEWID()");
-
-
-        }
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelbuilder.entity<employee>()
-        //        .property(b => b.id)
-        //        .valuegeneratedonaddorupdate();
-        //}
-
+            modelBuilder.Entity<Employee>().Property(x => x.Id).ValueGeneratedOnAdd();             
+        }     
     }
 }

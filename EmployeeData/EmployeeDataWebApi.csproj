@@ -16,10 +16,16 @@
     <Compile Include="Migrations\20221221045402_employees.Designer.cs" />
     <Compile Include="Migrations\20221221061118_employees2.cs" />
     <Compile Include="Migrations\20221221061118_employees2.Designer.cs" />
+    <Compile Include="Migrations\20221222072953_authorize.cs" />
+    <Compile Include="Migrations\20221222072953_authorize.Designer.cs" />
+    <Compile Include="Migrations\ApplicationDbContextModelSnapshot.cs" />
     <Compile Include="Migrations\EmployeeContextModelSnapshot.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.0">
       <PrivateAssets>all</PrivateAssets>
@@ -31,6 +37,11 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="VisualStudio.gitignore" Version="1.0.1" />
+    <PackageReference Include="xunit.extensibility.core" Version="2.4.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ApplicationDb\" />
   </ItemGroup>
 
 

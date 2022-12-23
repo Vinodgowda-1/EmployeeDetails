@@ -28,6 +28,11 @@ namespace EmployeeDataWebApi.EmployeeData
             employees.Remove(employee);            
         }
 
+        public void DeleteEmployee(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
         public Employee EditEmployee(Employee employee)
         {
 

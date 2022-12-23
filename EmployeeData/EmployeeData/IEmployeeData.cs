@@ -14,7 +14,7 @@ namespace EmployeeDataWebApi.EmployeeData
 
         Employee AddEmployee(Employee employee);
 
-        void DeleteEmployee(Employee employee);
+        void DeleteEmployee(Guid id);
 
         Employee EditEmployee(Employee employee);
     }
